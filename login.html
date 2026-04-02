@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login ke Akun NataDoc</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-chat" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+  </symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </symbol>
+  <symbol id="icon-paperclip" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/>
+  </symbol>
+  <symbol id="icon-mic" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
+  </symbol>
+  <symbol id="icon-stop" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6 6h12v12H6z"/>
+  </symbol>
+</svg>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo-natadoc.png" alt="NataDoc Logo">
+                <span class="logo-text">Nata<span>Doc</span></span>
+            </a>
+           <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="layanan.html">Layanan Kami</a></li>
+    <li><a href="konsultasi.html">
+        <svg class="icon nav-icon"><use xlink:href="#icon-chat"></use></svg>
+        Konsultasi
+    </a></li>
+    <li><a href="notifications.html" title="Notifikasi">
+        <svg class="icon nav-icon"><use xlink:href="#icon-bell"></use></svg>
+    </a></li>
+    <li><a href="profile.html" title="Profil">
+        <svg class="icon nav-icon"><use xlink:href="#icon-user"></use></svg>
+    </a></li>
+    <li><a href="login.html" id="auth-link">Login</a></li>
+</ul>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="form-card">
+            <h2>Login ke Akun Anda</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+            <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NataDoc. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
+
+<main class="container page-content">
+    <div class="form-card">
+        <h2>Notifikasi Anda</h2>
+        
+        <div id="notification-list"></div>
+
+        <button class="cta-button" id="mark-all-read-btn" style="margin-top: 2rem;">Tandai Semua Sudah Dibaca</button>
+    </div>
+</main>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/auth.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const notifList = document.getElementById('notification-list');
+        
+        // Data Dummy awal (agar tidak kosong saat pertama buka)
+        const defaultNotifs = [
+            { title: "Balasan Konsultasi", message: "Admin telah membalas pesan Anda.", time: "10 menit lalu", read: true },
+            { title: "Selamat Datang", message: "Akun Anda berhasil dibuat.", time: "1 hari lalu", read: true }
+        ];
+
+        // Ambil dari localStorage, kalau kosong pakai default
+        let notifications = JSON.parse(localStorage.getItem('natadocNotifications'));
+        if (!notifications) {
+            notifications = defaultNotifs;
+            localStorage.setItem('natadocNotifications', JSON.stringify(notifications));
+        }
+
+        // Render Notifikasi ke HTML
+        notifList.innerHTML = '';
+        notifications.forEach(notif => {
+            const item = document.createElement('div');
+            item.className = `notification-item ${notif.read ? '' : 'unread'}`;
+            item.innerHTML = `
+                <span class="icon" style="font-size: 1.5rem; margin-right: 15px; color: var(--secondary-color);">🔔</span> 
+                <div class="content">
+                    <h4 style="margin: 0; color: var(--primary-color);">${notif.title}</h4>
+                    <p style="margin: 5px 0;">${notif.message}</p>
+                    <small style="color: #888;">${notif.time}</small>
+                </div>
+            `;
+            notifList.appendChild(item);
+        });
+
+        // Update tombol "Tandai Baca"
+        document.getElementById('mark-all-read-btn').addEventListener('click', () => {
+            notifications.forEach(n => n.read = true);
+            localStorage.setItem('natadocNotifications', JSON.stringify(notifications));
+            location.reload(); // Refresh halaman untuk lihat efeknya
+        });
+    });
+</script>

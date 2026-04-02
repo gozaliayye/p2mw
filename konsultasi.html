@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi Gratis - NataDoc</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-chat" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+  </symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </symbol>
+  <symbol id="icon-paperclip" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/>
+  </symbol>
+  <symbol id="icon-mic" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
+  </symbol>
+  <symbol id="icon-stop" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6 6h12v12H6z"/>
+  </symbol>
+</svg>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo-natadoc.png" alt="NataDoc Logo">
+                <span class="logo-text">Nata<span>Doc</span></span>
+            </a>
+           <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="layanan.html">Layanan Kami</a></li>
+                <li><a href="konsultasi.html">
+                    <svg class="icon nav-icon"><use xlink:href="#icon-chat"></use></svg>
+                    Konsultasi
+                </a></li>
+                <li><a href="notifications.html" title="Notifikasi">
+                    <svg class="icon nav-icon"><use xlink:href="#icon-bell"></use></svg>
+                </a></li>
+                <li><a href="profile.html" title="Profil">
+                    <svg class="icon nav-icon"><use xlink:href="#icon-user"></use></svg>
+                </a></li>
+                <li><a href="login.html" id="auth-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <h2>Konsultasi Kearsipan Gratis</h2>
+        <p>Silakan sampaikan masalah kearsipan Anda. Tim ahli kami siap membantu.</p>
+        
+        <div id="chat-interface" style="display: none;"> 
+            <div id="chat-messages">
+                </div>
+            
+            <div id="chat-input-area">
+                <button id="file-upload-btn" class="chat-tool-btn" title="Lampirkan File">
+                    <svg class="icon"><use xlink:href="#icon-paperclip"></use></svg>
+                    <input type="file" id="file-input" style="display: none;" accept="image/*,video/*">
+                </button>
+
+                <button id="mic-btn" class="chat-tool-btn" title="Rekam Suara">
+                    <svg class="icon" id="mic-icon"><use xlink:href="#icon-mic"></use></svg>
+                </button>
+                
+                <textarea id="chat-input" placeholder="Ketik pesan Anda..." rows="1"></textarea>
+                
+                <button id="send-chat-btn" class="cta-button">Kirim</button>
+            </div>
+        </div>
+
+        <div id="login-prompt" class="form-card">
+            <p>Untuk memulai konsultasi, Anda perlu masuk ke akun NataDoc terlebih dahulu.</p>
+            <a href="login.html" class="cta-button">Login Sekarang</a>
+            <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NataDoc. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/chat.js"></script>
+</body>
+</html>

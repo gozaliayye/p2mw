@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - NataDoc</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-chat" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+  </symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </symbol>
+</svg>
+
+<header>
+    <nav class="container">
+        <a href="index.html" class="brand-logo">
+            <img src="assets/images/logo-natadoc.png" alt="NataDoc Logo">
+            <span class="logo-text">Nata<span>Doc</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="layanan.html">Layanan Kami</a></li>
+            <li><a href="konsultasi.html">
+                <svg class="icon nav-icon"><use xlink:href="#icon-chat"></use></svg>
+                Konsultasi
+            </a></li>
+            <li><a href="notifications.html" title="Notifikasi">
+                <svg class="icon nav-icon"><use xlink:href="#icon-bell"></use></svg>
+            </a></li>
+            <li><a href="profile.html" title="Profil">
+                <svg class="icon nav-icon"><use xlink:href="#icon-user"></use></svg>
+            </a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container page-content">
+    <h2>Layanan Profesional Kearsipan</h2>
+    <p>Pilih layanan yang sesuai untuk kebutuhan Anda.</p>
+    <br></br>
+    <p style="font-size: 0.9rem; color: #dc3545; margin-top: -10px; margin-bottom: 30px; font-style: italic;">
+        *Harga yang tertera adalah harga estimasi awal (Starting Price). Biaya akhir dapat disesuaikan berdasarkan volume arsip dan hasil survei.
+    </p>
+
+    <div id="service-list">
+        
+        <div class="service-card" data-id="1" data-name="Sosialisasi Kearsipan" data-price="0">
+            <h3>Sosialisasi Kearsipan</h3>
+            <p>Layanan ini mencakup penyuluhan, webinar, workshop, serta pendampingan bagi organisasi agar mampu memahami prinsip, fungsi, dan tata kelola arsip sesuai standar.</p>
+            <p class="price">Rp 0 (GRATIS)</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+        <div class="service-card" data-id="2" data-name="Rekonstruksi Arsip" data-price="25000000">
+            <h3>Rekonstruksi Arsip</h3>
+            <p>Layanan untuk menyusun ulang dan mengembalikan sistem pengelolaan arsip yang tidak teratur, tercecer, atau rusak agar kembali tertata dan mudah diakses.</p>
+            <p class="price">Rp 25.000.000</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+        <div class="service-card" data-id="3" data-name="Digitalisasi Arsip" data-price="10000000">
+            <h3>Digitalisasi Arsip</h3>
+            <p>Layanan alih media arsip fisik ke bentuk digital (scanning, indexing, metadata) untuk meningkatkan efisiensi, meminimalkan risiko kehilangan, dan mempercepat temu kembali arsip.</p>
+            <p class="price">Rp 10.000.000</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+        <div class="service-card" data-id="4" data-name="Perencanaan Sarana & Prasarana Kearsipan" data-price="7000000">
+            <h3>Perencanaan Sararana & Prasarana Kearsipan</h3>
+            <p>Layanan perancangan dan penataan fasilitas pendukung arsip (ruang, rak, box, dsb.) yang sesuai dengan standar.</p>
+            <p class="price">Rp 7.000.000</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+        <div class="service-card" data-id="5" data-name="Pembuatan Instrumen Kearsipan" data-price="15000000">
+            <h3>Pembuatan Instrumen Kearsipan</h3>
+            <p>Layanan penyusunan instrumen kearsipan (Tata Naskah Dinas, Klasifikasi Arsip, Sistem Klasifikasi Keamanan & Akses Arsip dan Jadwal Retensi Arsip) sebagai dasar pengelolaan arsip.</p>
+            <p class="price">Rp 15.000.000</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+         <div class="service-card" data-id="6" data-name="Pembuatan SOP Kearsipan" data-price="5000000">
+            <h3>Pembuatan SOP Kearsipan</h3>
+            <p>Penyusunan pedoman dan Standar Operasional Prosedur (SOP) kearsipan mulai dari penciptaan, penyimpanan, penggunaan, pemeliharaan, hingga penyusutan arsip.</p>
+            <p class="price">Rp 5.000.000</p>
+            <button class="add-to-cart-btn">Pilih Layanan</button>
+        </div>
+
+    </div>
+
+    <div id="cart">
+        <h3>Keranjang Anda</h3>
+        
+        <ul id="cart-items"></ul>
+
+        <p style="margin-top: 15px; font-size: 1.2rem;">Total: <span id="cart-total" style="font-weight: bold; color: var(--secondary-color);">Rp 0</span></p>
+        <button id="checkout-btn" class="cta-button" style="width: 100%; margin-top: 10px;">Lanjutkan ke Checkout</button>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 NataDoc. All Rights Reserved.</p>
+</footer>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
